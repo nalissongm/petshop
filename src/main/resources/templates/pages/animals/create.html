@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" th:href="@{/styles/global.css}">
+  <script type="text/javascript" th:src="@{/scripts/animals/navlinks.js}" defer></script>
+
+  <title>Novo animal</title>
+</head>
+
+<body>
+  <header>
+    <div class="content">
+      <h1>Pet Shop</h1>
+      <nav>
+        <ul>
+          <li><a class="" th:href="@{/animals}">Animais</a></li>
+          <li><a class="" href="/tutor">Tutor</a></li>
+          <li><a class="" href="/consulta">Consulta</a></li>
+          <li><a class="" href="/veterinario">Veterinário</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <form th:action="@{/animals/create}" method="post" th:object="${animal}">
+    <h1>Novo animal</h1>
+    <hr />
+    <div>
+      <label for="name">Nome</label>
+      <input id="name" th:field="*{name}" type="text">
+    </div>
+    <div>
+      <label for="race">Raça</label>
+      <input id="race" th:field="*{race}" type="text">
+    </div>
+    <div>
+      <label for="specie">Espécie</label>
+      <input id="specie" th:field="*{specie}" type="text">
+    </div>
+
+    <button type="submit">Cadastrar</button>
+  </form>
+</body>
+
+</html>
